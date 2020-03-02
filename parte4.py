@@ -53,7 +53,7 @@ def dist_entre_pontos(pontoA, pontoB):
 
 # Retorna a distância da câmera ao papel
 def dist_camera(h):
-    f, H = 908.6, 14 # px, cm
+    f, H = 908.6, 14.0 # px, cm
     if (h > 0):
         D = f*H/h
         return str(round(D,2))+' cm'
@@ -65,10 +65,8 @@ def angulo(pontoA, pontoB):
     dy = abs(yA-yB)
     dx = abs(xA-xB)
     if (dx != 0):
-        print(str(dy)+' '+str(dx))
         frac = float(dy)/float(dx)
         ang = np.arctan(frac)* 180/np.pi
-        print(ang)
     else:
         ang = 90.00
     return str(round(ang,2))+' graus'
@@ -130,7 +128,7 @@ while(True):
         # Retorna o angulo entre a horizontal e a reta que une os centros dos círculos
         ang = angulo(cmA, cmB)
         #print(ang)
-        #print(dist+' | '+ ang)
+        print(dist+' | '+ ang)
 
 
 
